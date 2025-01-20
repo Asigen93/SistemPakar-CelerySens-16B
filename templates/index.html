@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <title>CelerySens</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="FlameOnePage freebie theme for web startups by FairTech SEO."
+      name="description"
+    />
+    <meta content="FairTech" name="author" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="icon" href="/static/img/robot.png" type="image/png" />
+    <link
+      href="netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Include Font Awesome CDN in your HTML head if not already included -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="static/vendor/simple-line-icons/simple-line-icons.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="static/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="static/css/animate.css" rel="stylesheet" />
+    <link href="static/css/foto.css" rel="stylesheet" />
+    <link href="static/css/animasi.css" rel="stylesheet" />
+    <link
+      href="static/vendor/swiper/css/swiper.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="static/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+
+  <body id="body" data-spy="scroll" data-target=".header">
+    <header class="header navbar-fixed-top">
+      <nav class="navbar" role="navigation">
+        <div class="container">
+          <div class="menu-container js_nav-item">
+            <button
+              type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target=".nav-collapse"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="toggle-icon"></span>
+            </button>
+
+            <div class="logo">
+              <a class="logo-wrap" href="#body">
+                <img
+                  class="logo-img logo-img-main"
+                  src="/static/img/logo-new.png"
+                  alt="FlameOnePage Logo"
+                />
+                <img
+                  class="logo-img logo-img-active"
+                  src="/static/img/logo-new.png"
+                  alt="FlameOnePage Dark Logo"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="collapse navbar-collapse nav-collapse">
+            <!--div class="language-switcher">
+					  <ul class="nav-lang">
+                        <li><a class="active" href="#">EN</a></li>
+					    <li><a href="#">DE</a></li>
+						<li><a href="#">FR</a></li>
+					  </ul>
+					</div--->
+
+            <div class="menu-container">
+              <ul class="nav navbar-nav navbar-nav-right">
+                <li class="js_nav-item nav-item">
+                  <a class="nav-item-child nav-item-hover" href="#body">Home</a>
+                </li>
+                <li class="js_nav-item nav-item">
+                  <a class="nav-item-child nav-item-hover" href="#work"
+                    >Tentang</a
+                  >
+                </li>
+                <li class="js_nav-item nav-item">
+                  <a class="nav-item-child nav-item-hover" href="#faq"
+                    >Pertanyaan Yang Sering Diajukan</a
+                  >
+                </li>
+                <li class="js_nav-item nav-item">
+                  <a class="nav-item-child nav-item-hover" href="#team"
+                    >Tim Kami</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="background-green">
+      <div class="carousel-container">
+        <div class="carousel-content">
+          <h1 class="carousel-title">Selamat Datang Di CelerySens</h1>
+          <p class="color-white">
+            <span class="center-text">
+              Asisten cerdas yang dirancang untuk mendiagnosa penyakit pada
+              tanaman seledri dan memberikan solusi yang tepat dan efektif.
+            </span>
+          </p>
+          <div class="center-container">
+            <a
+              href="{{ url_for('chat') }}"
+              class="btn-theme btn-theme-sm btn-white-brd text-uppercase"
+              >Mulai</a
+            >
+          </div>
+        </div>
+        <div class="carousel-image">
+          <img
+            src="/static/img/robot1.png"
+            alt="CelerySens"
+            class="animated-image"
+            style="width: 75%"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!--========== SLIDER ==========-->
+
+    <!-- Work -->
+    <div id="work">
+      <div class="section-seperator">
+        <div class="content-md container">
+          <div class="row margin-b-40">
+            <div class="col-sm-12" style="text-align: center">
+              <h2 style="font-family: Poppins, sans-serif">Tentang</h2>
+              <p style="text-align: justify; font-family: Poppins, sans-serif">
+                CelerySens adalah sebuah asisten chatbot berbasis kecerdasan
+                buatan yang dirancang khusus untuk membantu budidaya tanaman
+                seledri. CelerySens hadir sebagai solusi modern untuk mendukung
+                berbagai aspek dalam proses diagnosa gejala penyakit serta
+                solusi yang akurat. CelerySens juga dapat memproses semua yang
+                terkait dengan seledri. Dengan memanfaatkan teknologi AI,
+                CelerySens memberikan kemudahan, efisiensi, dan ketepatan
+                informasi yang dapat diakses kapan saja dan di mana saja. Sistem
+                ini dikembangkan dengan berbasis Natural Language Processing
+                (NLP) menggunakan pendekatan Retrieval-Augmented Generation
+                (RAG), yang memungkinkan chatbot memberikan jawaban yang relevan
+                dengan menggabungkan pemahaman bahasa alami dan akses langsung
+                ke sumber data terpercaya. Dengan dukungan data dan wawasan yang
+                diperoleh dari seorang pakar di bidang pertanian bernama Han
+                Aldianova, CelerySens mampu memberikan panduan yang terpercaya
+                dan berbasis keilmuan.
+              </p>
+            </div>
+          </div>
+
+          <!--// end row -->
+
+          <!-- Masonry Grid -->
+          <div class="masonry-grid row">
+            <div
+              class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-30"
+            >
+              <!-- Work -->
+              <div class="work work-popup-trigger">
+                <div class="work-overlay">
+                  <img
+                    class="full-width img-responsive styled-image"
+                    src="/static/img/about/about1.png"
+                    alt="Cara Penggunaan"
+                  />
+                </div>
+                <div class="work-popup-overlay">
+                  <div class="work-popup-content" style="border-radius: 8px">
+                    <a href="javascript:void(0);" class="work-popup-close"
+                      >Hide</a
+                    >
+                    <div class="margin-b-30">
+                      <h3 class="margin-b-5">How to Use</h3>
+                      <span>Cara Penggunaan</span>
+                    </div>
+                    <div
+                      class="row col-sm-12 sm-margin-b-20"
+                      style="text-align: justify"
+                    >
+                      <p>
+                        Silahkan ketikkan masalah atau pertanyaan anda pada
+                        form, kemudian kirim dan tunggu hingga Asisten
+                        CelerySens memberikan jawaban.
+                      </p>
+                      <p>
+                        Anda dapat bertanyaan terkait masalah seledri Anda
+                        seperti dengan memberikan gejala atau masalah lainnya.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Work -->
+            </div>
+            <div
+              class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-30"
+            >
+              <!-- Work -->
+              <div class="work work-popup-trigger">
+                <div class="work-overlay">
+                  <img
+                    class="full-width img-responsive styled-image"
+                    src="/static/img/about/about2.png"
+                    alt="Portfolio Image"
+                  />
+                </div>
+                <div class="work-popup-overlay">
+                  <div class="work-popup-content" style="border-radius: 8px">
+                    <a href="javascript:void(0);" class="work-popup-close"
+                      >Hide</a
+                    >
+                    <div class="margin-b-30">
+                      <h3 class="margin-b-5">How to Use</h3>
+                      <span>Cara Penggunaan Virtual Asisten</span>
+                    </div>
+                    <div
+                      class="row col-sm-12 sm-margin-b-20"
+                      style="text-align: justify"
+                    >
+                      <p>
+                        Untuk menggunakan fitur Virtual Asisten di CelerySens,
+                        tekan tombol mic dan sebutkan masalah atau gejala yang
+                        ingin Anda tanyakan. Setelah selesai berbicara,
+                        pertanyaan akan dikirim ke sistem dan hasil jawaban
+                        otomatis dibacakan oleh CelerySens.
+                      </p>
+                      <p>
+                        Fitur ini mempermudah pengguna untuk berkomunikasi
+                        langsung dengan sistem CelerySens melalui suara, tanpa
+                        perlu mengetik. Sehingga meningkatkan kenyamanan,
+                        kecepatan, dan aksesibilitas, terutama bagi pengguna
+                        dengan keterbatasan mengetik atau membaca.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Work -->
+            </div>
+            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+              <!-- Work -->
+              <div class="work work-popup-trigger">
+                <div class="work-overlay">
+                  <img
+                    class="full-width img-responsive styled-image"
+                    src="/static/img/about/about3.png"
+                    alt="Portfolio Image"
+                  />
+                </div>
+                <div class="work-popup-overlay">
+                  <div class="work-popup-content" style="border-radius: 8px">
+                    <a href="javascript:void(0);" class="work-popup-close"
+                      >Hide</a
+                    >
+                    <div class="margin-b-30">
+                      <h3 class="margin-b-5">How to Use</h3>
+                      <span>Cara menghapus history pesan</span>
+                    </div>
+                    <div
+                      class="row col-sm-12 sm-margin-b-20"
+                      style="text-align: justify"
+                    >
+                      <p>
+                        Untuk menghapus riwayat pesan, tekan tombol "Hapus" di
+                        sisi kanan bawah. Selanjutnya, konfirmasikan
+                        penghapusan, dan riwayat chat akan terhapus sepenuhnya.
+                      </p>
+                      <p>
+                        Fitur ini memungkinkan pengguna menjaga privasi dan
+                        kerapihan halaman chat dengan mudah, memastikan riwayat
+                        pesan yang tidak diperlukan dapat dihapus sepenuhnya.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Work -->
+            </div>
+            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+            <div
+              class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-30"
+            ></div>
+            <div
+              class="masonry-grid-item col-xs-12 col-sm-6 col-md-8 margin-b-30"
+            ></div>
+          </div>
+          <!-- End Masonry Grid -->
+        </div>
+      </div>
+    </div>
+    <!-- End Work -->
+
+    <!--========== PAGE LAYOUT ==========-->
+    <div id="faq">
+      <div class="content-lg container">
+        <div class="row margin-b-40" style="margin-top: -30px">
+          <div class="col-sm-12 text-center">
+            <h2
+              style="
+                font-weight: 400;
+                font-weight: bold;
+                font-family: Poppins, sans-serif;
+                font-size: 2.5rem;
+                color: #202124;
+              "
+            >
+              Pertanyaan Yang Sering Diajukan
+            </h2>
+          </div>
+        </div>
+        <!--// end row -->
+
+        <div
+          class="faq-section"
+          style="
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+          "
+        >
+          <div
+            class="faq-item"
+            style="border-bottom: 1px solid #e0e0e0; padding: 20px 0"
+          >
+            <h4
+              class="faq-question"
+              style="margin: 0; font-size: 2rem; color: #000; cursor: pointer"
+            >
+              Apa itu seledri?
+            </h4>
+            <div class="faq-answer">
+              <p>
+                Seledri (apium graveolens) adalah tanaman sayuran berwarna hijau
+                yang biasa digunakan sebagai bumbu masakan atau bahan makanan
+                sehat...
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item"
+            style="border-bottom: 1px solid #e0e0e0; padding: 20px 0"
+          >
+            <h4
+              class="faq-question"
+              style="margin: 0; font-size: 2rem; color: #000; cursor: pointer"
+            >
+              Apa saja manfaat seledri?
+            </h4>
+            <div class="faq-answer">
+              <p>
+                Seledri kaya akan vitamin dan mineral, seperti vitamin K,
+                vitamin C, vitamin A, kalium, dan folat. Selain itu, seledri
+                juga dikenal sebagai sumber antioksidan yang baik dan dapat
+                membantu menurunkan tekanan darah. Kandungan seratnya juga bagus
+                untuk pencernaan.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item"
+            style="border-bottom: 1px solid #e0e0e0; padding: 20px 0"
+          >
+            <h4
+              class="faq-question"
+              style="margin: 0; font-size: 2rem; color: #000; cursor: pointer"
+            >
+              Apa itu keong sumpil?
+            </h4>
+            <div class="faq-answer">
+              <p>
+                Keong sumpil, atau keong seledri (Littorina spp.), adalah hama
+                yang dapat merusak tanaman seledri dengan memakan daun, batang,
+                dan akar, sehingga menghambat pertumbuhan tanaman. Untuk
+                mengendalikan keong sumpil, beberapa metode dapat diterapkan.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item"
+            style="border-bottom: 1px solid #e0e0e0; padding: 20px 0"
+          >
+            <h4
+              class="faq-question"
+              style="margin: 0; font-size: 2rem; color: #000; cursor: pointer"
+            >
+              Bagaimana cara memanen seledri?
+            </h4>
+            <div class="faq-answer">
+              <p>
+                Cara memanennya yang benar adalah memotong atau mematahkan dari
+                pangkalnya, 1 bonggol sebisa mungkin ambil 3-4 batang saja agar
+                bisa dipanen kembali dalam waktu dekat, jadi seledri terus
+                tumbuh dengan baik.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item"
+            style="border-bottom: 1px solid #e0e0e0; padding: 20px 0"
+          >
+            <h4
+              class="faq-question"
+              style="margin: 0; font-size: 2rem; color: #000; cursor: pointer"
+            >
+              Bagaimana cara atasi busuk akar pada seledri?
+            </h4>
+            <div class="faq-answer">
+              <p>
+                1. Perbaiki drainase: Pastikan tanah memiliki drainase yang baik
+                agar air tidak menggenang. Buatlah bedengan yang lebih tinggi
+                atau tambahkan material penggembur tanah.
+              </p>
+              <p>
+                2. Fungisida: Gunakan fungisida sistemik seperti Azoxystrobin
+                atau Propiconazole sesuai petunjuk penggunaan. Semprotkan pada
+                area perakaran.
+              </p>
+              <p>
+                3. Pemangkasan: Buang bagian tanaman yang sudah terinfeksi dan
+                bersihkan sisa-sisa tanaman yang terinfeksi untuk mencegah
+                penyebaran.
+              </p>
+              <p>
+                4. Pupuk Hayati: Gunakan pupuk hayati setiap 1-2 bulan untuk
+                meningkatkan daya tahan tanaman.
+              </p>
+              <p>
+                5. Kebersihan: Jaga kebersihan lahan dengan membersihkan
+                sisa-sisa tanaman sebelumnya.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item"
+            style="border-bottom: 1px solid #e0e0e0; padding: 20px 0"
+          >
+            <h4
+              class="faq-question"
+              style="margin: 0; font-size: 2rem; color: #000; cursor: pointer"
+            >
+              Nama penyakit bercak daun cokelat kehitaman seperti gosong dan
+              bagaimana cara mengatasinya?
+            </h4>
+            <div class="faq-answer">
+              <p>
+                Penyakit bercak daun cersospora, bercaknya seperti
+                gosong-gosong. penyakit ini memang sering terjadi serta sangat
+                cepat juga menyebarnya. Solusinya dibersihkan yang terkena
+                bercak tersebut, dipangkas dengan cara dipatah dari pangkal
+                batangnya, yang dipangkas hanya bagian yang terkena saja bukan
+                semuanya. dibuang yang jauh agar tidak menular ke tanaman yang
+                masih sehat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div id="team">
+      <!-- Contact List -->
+      <div class="section-seperator" style="margin-top: 50px">
+        <h2
+          style="
+            font-weight: 400;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2.5rem;
+            font-family: Poppins, sans-serif;
+            color: #202124;
+          "
+        >
+          Tim Kami
+        </h2>
+        <div class="content-lg container" style="margin-top: -70px">
+          <div class="row">
+            <!-- Contact List -->
+            <div class="col-sm-4 sm-margin-b-50 text-center">
+              <!-- Informasi Pakar -->
+              <h3 class="mt-3">
+                <a>Han Aldianova</a>
+                <span class="text-uppercase margin-l-20 text-muted"
+                  >HUMAN EXPERT</span
+                >
+              </h3>
+              <!-- Foto Profil -->
+              <div class="profile-image-container">
+                <img
+                  src="/static/img/Pakar.jpeg"
+                  alt="Han Aldianova"
+                  class="img-fluid rounded-circle profile-image"
+                />
+              </div>
+              <br />
+              <ul class="list-unstyled contact-list mt-2">
+                <li>
+                  <i class="margin-r-10 color-base"></i>
+                  <strong>Universitas Brawijaya</strong>
+                </li>
+                <li>
+                  <i class="margin-r-10 color-base icon-envelope"></i>
+                  <a
+                    href="mailto:hanaldianova@gmail.com"
+                    class="text-decoration-none"
+                  >
+                    hanaldianova@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Contact List -->
+
+            <!-- Contact List -->
+            <div class="col-sm-4 sm-margin-b-50 text-center">
+              <!-- Informasi Ketua -->
+              <h3 class="mt-3">
+                <a>Tirta R.C Saputra</a>
+                <span class="text-uppercase margin-l-20 text-muted"
+                  >LEADER</span
+                >
+              </h3>
+              <!-- Foto Profil -->
+              <div class="profile-image-container">
+                <img
+                  src="/static/img/Tirta3.png"
+                  alt="Tirta R.C Saputra"
+                  class="img-fluid rounded-circle profile-image"
+                />
+              </div>
+              <br />
+              <ul class="list-unstyled contact-list mt-2">
+                <li>
+                  <i class="margin-r-10 color-base"></i>
+                  <strong>Universitas Muhammadiyah Sorong</strong>
+                </li>
+
+                <li>
+                  <i class="margin-r-10 color-base icon-envelope"></i>
+                  <a
+                    href="mailto:tirtaromadhon23@gmail.com"
+                    class="text-decoration-none"
+                  >
+                    tirtaromadhon23@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-4 sm-margin-b-50 text-center">
+              <!-- Informasi Anggota -->
+
+              <h3 class="mt-3">
+                <a>Billy Jes</a>
+                <span class="text-uppercase margin-l-20 text-muted"
+                  >MEMBER</span
+                >
+              </h3>
+              <!-- Foto Profil -->
+              <div class="profile-image-container">
+                <img
+                  src="/static/img/Billy.jpeg"
+                  alt="Han Aldianova"
+                  class="img-fluid rounded-circle profile-image"
+                />
+              </div>
+              <br />
+              <ul class="list-unstyled contact-list mt-2">
+                <li>
+                  <i class="margin-r-10 color-base"></i>
+                  <strong>Universitas Muhammadiyah Sorong</strong>
+                </li>
+                <li>
+                  <i class="margin-r-10 color-base icon-envelope"></i>
+                  <a
+                    href="mailto:billysorong112@gmail.com"
+                    class="text-decoration-none"
+                  >
+                    billysorong112@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Contact List -->
+          </div>
+          <!--// end row -->
+        </div>
+      </div>
+    </div>
+    <!-- End Contact -->
+    <!--========== END PAGE LAYOUT ==========-->
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer">
+      <!-- Links -->
+      <div class="section-seperator"></div>
+      <!-- End Links -->
+
+      <!-- Copyright -->
+      <div class="content container">
+        <!--// end row -->
+        <div class="row">
+          <div class="col-xs-12 text-center mt-3">
+            <p class="copyright-text">
+              © Copyright 2024, CelerySens Team. All Rights Reserved. <br />
+              Designed by CelerySens Team ☘️
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Copyright -->
+    </footer>
+    <!--========== END FOOTER ==========-->
+
+    <!-- Back To Top -->
+    <a href="javascript:void(0);" class="js-back-to-top back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- CORE PLUGINS -->
+    <script src="/static/vendor/jquery.min.js" type="text/javascript"></script>
+    <script
+      src="/static/vendor/jquery-migrate.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/static/vendor/bootstrap/js/bootstrap.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script>
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+          const answer = faqItem.querySelector(".faq-answer");
+
+          // Toggle the active class
+          if (faqItem.classList.contains("active")) {
+            faqItem.classList.remove("active");
+          } else {
+            // Optionally, close other FAQ items
+            document.querySelectorAll(".faq-item.active").forEach((item) => {
+              item.classList.remove("active");
+            });
+
+            faqItem.classList.add("active");
+          }
+        });
+      });
+    </script>
+
+    <!-- PAGE LEVEL PLUGINS -->
+    <script
+      src="/static/vendor/jquery.easing.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/static/vendor/jquery.back-to-top.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/static/vendor/jquery.smooth-scroll.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/static/vendor/jquery.wow.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/static/vendor/swiper/js/swiper.jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/static/vendor/masonry/jquery.masonry.pkgd.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/static/vendor/masonry/imagesloaded.pkgd.min.js"
+      type="text/javascript"
+    ></script>
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <script src="/static/js/layout.min.js" type="text/javascript"></script>
+    <script
+      src="/static/js/components/wow.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/static/js/components/swiper.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/static/js/components/masonry.min.js"
+      type="text/javascript"
+    ></script>
+  </body>
+  <!-- END BODY -->
+</html>

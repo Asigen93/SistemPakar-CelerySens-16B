@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CelerySens</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/static/img/robot.png" type="image/png" />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <!-- Custom Scrollbar -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/css.css" />
+    <link rel="stylesheet" href="/static/css/alert.css" />
+    <link rel="stylesheet" href="/static/css/animasi.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Responsive Voice -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=yTMl6oMW"></script>
+  </head>
+  <body>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Custom Scrollbar JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+
+    <div class="container-fluid h-100 d-flex">
+      <!-- Sidebar Kontak -->
+      <div class="wrapper" style="background-color: darkslategray">
+        <input type="checkbox" id="btn" hidden />
+        <label for="btn" class="menu-btn">
+          <i class="fas fa-bars"></i>
+          <i class="fas fa-times"></i>
+        </label>
+        <ul class="contacts" style="padding: 0; margin: 10px">
+          <li
+            class="active"
+            style="
+              color: white;
+              font-family: 'Poppins', sans-serif;
+              text-align: justify;
+              line-height: 1.4;
+              padding: 0;
+              margin: 0;
+            "
+          >
+            <div class="d-flex bd-highlight">
+              <div class="user_info" style="margin: 0">
+                <br />
+                <h5
+                  style="
+                    text-align: center;
+                    font-weight: bold;
+                    margin: 40px 15px 15px 15px;
+                  "
+                >
+                  Asisten Diagnosa dan Solusi untuk Mengatasi Masalah Seledri
+                  Anda
+                </h5>
+                <h6 style="margin: 0 15px 15px 15px">
+                  Halo...!!! Saya di sini untuk membantu Anda dalam mendiagnosa
+                  masalah pada tanaman seledri Anda dan memberikan solusi yang
+                  tepat dan akurat. Apa yang ingin Anda ketahui?
+                  <br />
+                  Berikut ini adalah beberapa pertanyaan yang mungkin ingin Anda
+                  tanyakan kepada saya:
+                </h6>
+                <ol style="margin: 0 15px 15px 15px; padding: 0">
+                  <li style="margin: 0 15px 5px 15px">
+                    Cara mengobati bercak daun seledri?
+                  </li>
+                  <li style="margin: 0 15px 5px 15px">
+                    Seledri saya mengalami busuk pada bagian akar, bagaimana
+                    cara untuk mengatasinya?
+                  </li>
+                  <li style="margin: 0 15px 5px 15px">
+                    Cara membasmi hama keong sumpil?
+                  </li>
+                  <li style="margin: 0 15px 5px 15px">
+                    Bagaimana cara merawat seledri yang baik dan benar?
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Area Chat -->
+      <div class="chat_container" style="width: 100%; display: block">
+        <div class="card" id="chatCard">
+          <div class="card-header msg_head">
+            <!-- Tombol Toggle Sidebar -->
+            <button id="toggleSidebar" style="display: none"></button>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="logo-container">
+                <a href="/" class="logo-link">
+                  <img
+                    src="/static/img/logo-new.png"
+                    alt="Logo"
+                    style="width: 200px; height: auto"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body msg_card_body" id="chatArea">
+            <br />
+            <!-- Riwayat Chat -->
+            {% for message in history %} {% if message.role == 'user' %}
+            <div class="d-flex justify-content-end mb-4">
+              <div class="msg_cotainer_send">
+                {{ message.text | safe }}
+                <span class="msg_time_send">{{ message.time }}</span>
+              </div>
+              <div class="img_cont_msg">
+                <img
+                  src="/static/img/logo-me.png"
+                  class="rounded-circle user_img_msg"
+                />
+              </div>
+            </div>
+            {% elif message.role == 'bot' %}
+            <div class="d-flex justify-content-start mb-4">
+              <div class="img_cont_msg">
+                <img
+                  src="/static/img/logo-crop.png"
+                  class="rounded-circle user_img_msg"
+                />
+              </div>
+              <div class="msg_cotainer" style="position: relative">
+                {{ message.text | safe }}
+                <div class="msg_actions">
+                  <button class="copy-button" data-text="{{ message.text }}">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                  <button class="speaker-button" data-text="{{ message.text }}">
+                    <i class="fas fa-volume-up"></i>
+                  </button>
+                </div>
+                <span class="msg_time">{{ message.time }}</span>
+              </div>
+            </div>
+            {% endif %} {% endfor %}
+          </div>
+
+          <div class="card-footer">
+            <div class="input-group" style="position: relative">
+              <textarea
+                class="type_msg"
+                id="pertanyaan"
+                placeholder="Ketik masalah Anda..."
+                style="
+                  padding-right: 40px;
+                  overflow: hidden;
+                  resize: none;
+                  margin-left: 10px;
+                  margin-left: 0;
+                "
+              ></textarea>
+              <button
+                class="send_btn"
+                id="sendBtn"
+                style="
+                  position: absolute;
+                  margin-top: -5px;
+                  right: 10px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  border: none;
+                  background: transparent;
+                  font-size: 20px;
+                  cursor: pointer;
+                "
+              >
+                ➤
+                <!-- Simbol tombol kirim -->
+              </button>
+              <button
+                class="mic_btn"
+                id="micBtn"
+                style="
+                  position: absolute;
+                  right: 40px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  margin-top: -5px;
+                  border: none;
+                  background: transparent;
+                  font-size: 20px;
+                  cursor: pointer;
+                "
+              >
+                <i class="fas fa-microphone"></i>
+              </button>
+            </div>
+
+            <form
+              action="{{ url_for('clear_history') }}"
+              method="POST"
+              style="margin-top: -10px; display: inline"
+            >
+              <button
+                type="submit"
+                class="btn btn-danger"
+                id="clearBtn"
+                title="Hapus Riwayat Chat"
+              >
+                <i class="fas fa-trash-alt"></i> Hapus
+              </button>
+            </form>
+
+            <div id="confirmationAlert" class="alert-container">
+              <div class="alert-box">
+                <p id="alertMessage">
+                  Apakah Anda yakin ingin menghapus semua chat?
+                </p>
+                <div class="alert-actions">
+                  <button id="confirmYes" class="btn btn-success">Ya</button>
+                  <button id="confirmNo" class="btn btn-danger">Tidak</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="confirmDeleteModal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">Konfirmasi Hapus</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Apakah Anda yakin ingin menghapus semua percakapan?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Batal
+            </button>
+            <button type="button" id="confirmDelete" class="btn btn-danger">
+              Hapus
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="/static/js/js.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+
+Fancybox.bind("[data-fancybox]", {
+	Carousel: {
+		Panzoom: {
+			touch: false
+		},
+	},
+
+});

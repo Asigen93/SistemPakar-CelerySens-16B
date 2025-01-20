@@ -1,0 +1,294 @@
+
+$('.prem-menu .trigger').click(function () {
+	$('.mob-menu-prem').slideToggle(200);
+	$('body').toggleClass('hidden');
+})
+
+$('.mob-menu-prem .close').click(function () {
+	$('.mob-menu-prem').slideToggle(200);
+	$('body').toggleClass('hidden');
+})
+
+$('.btn-lang').click(function () {
+	$('.main__langs').toggleClass('active');
+	$(this).toggleClass('active')
+})
+
+const swiper = new Swiper('.main-slider-container', {
+	slidesPerView: 1,
+	spaceBetween: 5,
+	autoplay: true,
+	navigation: {
+		nextEl: ".main-slider__next",
+		prevEl: ".main-slider__prev",
+	},
+	pagination: {
+		el: '.main-slider-pag',
+	},
+
+});
+
+
+$('.prem-pref__item').on('mouseenter', function () {
+	let slideName = $(this).data('trigger');
+	console.log(slideName);
+
+	$('.prem-pref__center .swiper-slide').removeClass('swiper-slide-active')
+	$(slideName).addClass('swiper-slide-active')
+})
+
+
+
+$('.faq__item__top').click(function () {
+	$(this).parents('.faq__item').toggleClass('active');
+	$(this).siblings('.faq__item__text').slideToggle(200)
+})
+
+$('.accept .btn').click(function () {
+	$('.accept').hide();
+})
+
+$('.chat-sett').click(function () {
+	$(this).siblings('.chat-btn__setting').toggle();
+})
+
+if ($(window).width() < 980) {
+	const swiperPrem1 = new Swiper('.prem-pref__center', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+
+		pagination: {
+			el: '.prem-pref-pag',
+		},
+
+	});
+}
+
+const swiperPrem2 = new Swiper('.prem-why__wrapper', {
+	slidesPerView: 5,
+	spaceBetween: -30,
+	breakpoints: {
+		200: {
+			slidesPerView: 1,
+		},
+		680: {
+			slidesPerView: 2,
+		},
+		980: {
+			slidesPerView: 4,
+		},
+		1280: {
+			slidesPerView: 5,
+		}
+	}
+});
+
+const swiperPrem3 = new Swiper('.prem-tarif__cards', {
+	slidesPerView: 4,
+	spaceBetween: 24,
+	breakpoints: {
+		200: {
+			slidesPerView: 1.2,
+		},
+		680: {
+			slidesPerView: 2.2,
+		},
+		980: {
+			slidesPerView: 3.2,
+		},
+		1280: {
+			slidesPerView: 4,
+		}
+	}
+	// pagination: {
+	// 	el: '.main-slider-pag',
+	// },
+
+});
+
+$('.menu-chat-trigger').click(function () {
+  $('.chat-menu__all--mob').slideToggle(200);
+})
+$('.chat-menu__all--mob .close').click(function () {
+  $('.chat-menu__all--mob').slideToggle(200)
+});
+
+$('.menu-logo .menu-logo--trigger').click(function () {
+  $('.chat-menu__all-desc').slideToggle(200)
+});
+$('.chat-menu__all-desc .close').click(function () {
+  $('.chat-menu__all-desc').slideToggle(200)
+});
+
+
+$(window).scroll(function () {
+	var $this = $(this),
+		$head = $('.prem-menu');
+	if ($this.scrollTop() > 120) {
+		$head.addClass('active')
+	} else {
+		$head.removeClass('active')
+	}
+});
+
+const swiper2 = new Swiper('.faq-slider-row', {
+	slidesPerView: 'auto',
+	spaceBetween: 8,
+	centeredSlides: false,
+	navigation: {
+		nextEl: ".faq-next",
+		prevEl: ".faq-prev",
+	},
+});
+
+
+
+$(document).ready(function () {
+	$('.prem-menu__right a').click(function () { // ловим клик по ссылке с классом go_to
+		var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+		if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+			$('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); // анимируем скроолинг к элементу scroll_el
+		}
+		return false; // выключаем стандартное действие
+	});
+
+
+
+	$('.top').click(function () { // ловим клик по ссылке с классом go_to
+		var scroll_el = $("body"); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+		if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+			$('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); // анимируем скроолинг к элементу scroll_el
+		}
+		return false; // выключаем стандартное действие
+	});
+
+});
+
+$('.menu__lang').click(function () {
+	$('.languages').slideToggle(200);
+	$('.all-lang').slideToggle(200);
+	$(this).toggleClass('active')
+})
+
+$('.menu--trigger').click(function () {
+	$('menu').toggleClass('active');
+	$('.menu-mobile').toggleClass('active');
+	$('body').toggleClass('hidden-body')
+})
+
+if ($(window).width() <= 760) {
+  const mainMenu = document.querySelector('.chat-menu');
+  const blur = document.querySelector('.blur');
+  const body = document.querySelector('body');
+
+  let touchstartX = 0;
+  let touchstartY = 0;
+  let touchendX = 0;
+  let touchendY = 0;
+
+  mainMenu.addEventListener('touchstart', (event) => {
+      touchstartX = event.touches[0].screenX;
+      touchstartY = event.touches[0].screenY;
+  }, false);
+
+  mainMenu.addEventListener('touchend', (event) => {
+      touchendX = event.changedTouches[0].screenX;
+      touchendY = event.changedTouches[0].screenY;
+      handleSwipe();
+  }, false);
+
+  const handleSwipe = () => {
+    if (touchendX + 40 < touchstartX) {
+      mainMenu.classList.remove('active');
+      body.classList.remove('body-menu');
+      blur.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('click', e => {
+    if (!mainMenu.contains(e.target) && mainMenu.classList.contains('active')) {
+      mainMenu.classList.remove('active');
+      body.classList.remove('body-menu');
+      blur.style.display = 'none';
+    }
+  }, true)
+
+  document.querySelector('.chat-sidetrigger').addEventListener('click', e => {
+    if (mainMenu.classList.contains('active')) {
+      mainMenu.classList.remove('active');
+      body.classList.remove('body-menu');
+      blur.style.display = 'none';
+    } else {
+      mainMenu.classList.add('active');
+      body.classList.add('body-menu');
+      blur.style.display = 'block';
+    }
+  })
+}
+/*
+var textarea = document.querySelector('textarea');
+
+textarea.addEventListener('keyup', function () {
+	if (this.scrollTop > 0) {
+		this.style.height = this.scrollHeight + "px";
+	}
+});
+*/
+
+//Измененено
+/*
+if ($(window).width() < 760) {
+	$(document).mouseup(function (e) { // событие клика по веб-документу
+		var div = $(".chat-menu.active"); // тут указываем ID элемента
+		if (!div.is(e.target) // если клик был не по нашему блоку
+			&& div.has(e.target).length === 0) { // и не по его дочерним элементам
+			div.toggleClass('active'); // скрываем его
+			$('.blur').hide();
+			$('body').removeClass('body-menu')
+		}
+	});
+}
+
+$('.menu-chat-trigger').click(function () {
+	$('.chat-menu__all--mob').slideToggle(200);
+})
+
+if ($(window).width() <= 760) {
+	$('.chat-sidetrigger').on('click', function () {
+		$('.chat-menu').toggleClass('active');
+		$('body').toggleClass('body-menu');
+	});
+}
+
+
+Fancybox.bind("[data-fancybox]", {
+	Carousel: {
+		Panzoom: {
+			touch: false
+		},
+	},
+
+});
+*/
+
+$(".js-range-slider").ionRangeSlider({
+	skin: "round"
+});
+
+$('.chat__message').on('mouseenter', function () {
+	$(this).find('.chat__message__copy').addClass('active')
+})
+$('.chat__message').on('mouseleave', function () {
+	$(this).find('.chat__message__copy').removeClass('active')
+})
+
+
+$('.setting-popup .close').click(function () {
+	$('.setting-popup').slideUp(200);
+	$('#setting').removeClass('triggered')
+})
+$('.setting-button').click(function () {
+	$('.setting-popup').slideDown(200);
+	$('#setting').addClass('triggered')
+})
+
